@@ -4,7 +4,7 @@ import React, {useRef, useState} from 'react';
 //import Icon from 'react-native-vector-icons/Octicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon5 from 'react-native-vector-icons/FontAwesome5';
-//import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 //import FIcon from 'react-native-vector-icons/Feather';
 import {Home, VideoPlay, SearchZoomIn, Teacher, VideoCircle} from 'iconsax-react-native';
 //import Icon from 'react-native-vector-icons/Ionicons';
@@ -91,11 +91,11 @@ export default function App() {
           </View>
           <View style={{flexDirection: 'row', gap:20}}>
           <TouchableOpacity onPress={onShare}>
-          <Icon name="share-alt" size={20} color="#000" style={{ fontWeight: 100 }} />
+          <MIcon name="share-variant" size={20} color="#000" style={{ fontWeight: 100 }} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={onShare}>
-          <Icon5 name="ellipsis-v" size={20} color="#000" style={{ fontWeight: 100 }} />
+          <MIcon name="dots-vertical" size={20} color="#000" style={{ fontWeight: 100 }} />
           </TouchableOpacity>
           </View>
 
@@ -134,12 +134,20 @@ export default function App() {
           <View style={{width:200, flex:1, flexGrow: 1}}>
           <Text style={{fontSize:10, fontWeight:700}}>{description}</Text>
           </View>
-        </View>
 
-       
-          {/* <View style={{flexDirection: 'row', marginLeft: 10}}>
-            <Text style={{fontWeight:700}}>{description}</Text>
-          </View> */}
+          <View style={[styles.divRowLR, {height:'auto'}]}>
+          <View style={{flexDirection: 'row', gap:5, alignItems: 'flex-end'}}>
+          <TouchableOpacity onPress={onShare}>
+          <Icon name="heart-o" size={15} color="#EB5757" style={{ fontWeight: 100 }} />
+          </TouchableOpacity>
+          <Text style={{fontSize:12}}>500</Text>
+          </View>
+          <View style={{width:100, height:10,flexDirection: 'row', alignItems: 'center'}}>
+          <Image source={require('./assets/images/logo1.png')} alt='loading' onError={(error) => console.log('Error loading image:', error.nativeEvent.error)} />
+          </View>
+          </View>
+
+        </View>
 
           {/* <View style={[styles.divRowLR, {height:'auto', marginLeft:10, marginRight: 10}]}>
           <View style={{flexDirection: 'row', gap:5, alignItems: 'flex-end'}}>
@@ -160,8 +168,7 @@ export default function App() {
 
   return (
     <DrawerLayoutAndroid ref={drawer} drawerWidth={300} drawerPosition={drawerPosition} renderNavigationView={navigationView}>
-      
-    {/* <ScrollView  showsVerticalScrollIndicator={true}> */}
+    
     <View style={styles.divMain}>
     <View style={styles.divMenuRow}>
       <View style={styles.leftItem}>
@@ -177,6 +184,7 @@ export default function App() {
     </View>
     </View>
 
+{/* <ScrollView  showsVerticalScrollIndicator={true}> */}
     <LinearGradient
       colors={['#334D99', '#355FD3']} // Gradient colors
       start={{ x: 0, y: 0 }} // Start position
@@ -205,7 +213,7 @@ export default function App() {
         description="Current Trends in the Treatment of in the Drug-Resistant Pneumonia"
       />
 
-<View>
+    <View>
       <Text style={styles.sectionHead}>Most Viewed by Doctors</Text>
     </View>
 
@@ -214,11 +222,9 @@ export default function App() {
         image="./assets/images/slide1.png"
         description="Current Trends in the Treatment of in the Drug-Resistant Pneumonia"
       />
+{/* </ScrollView> */}
+
 </View>
-    {/* </ScrollView> */}
-
-    
-
 
     <View style={styles.footer}>
     <View style={{flex:1, alignItems:'center'}}><Home color="#000" size={20} variant='Outline' /><Text style={{fontSize: 10}}>Home</Text></View>

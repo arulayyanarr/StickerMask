@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
     },
     instaCard: {
-        height: 330,
+        height: 300,
         //flex: 1,
         flexDirection: 'column',
         backgroundColor: '#fff',
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         gap: 10
     },
     instaCardImage:{
-        height: 200,
+        height: 170,
         width: 'auto',
         borderRadius: 20,
     },
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
       width:'auto'
     },
     instaList: {
-      height: 70,
+      height: 100,
       flexDirection: 'row',
       backgroundColor: '#fff',
       borderRadius: 20,
